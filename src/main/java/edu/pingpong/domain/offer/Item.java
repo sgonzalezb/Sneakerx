@@ -1,4 +1,4 @@
-package edu.pingpong.stockx.domain.offer;
+package edu.pingpong.domain.offer;
 
 import java.util.List;
 
