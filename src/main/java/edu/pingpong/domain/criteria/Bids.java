@@ -20,7 +20,6 @@ public class Bids implements Criteria {
     public List<Offer> checkCriteria(Item item) {
         List<Offer> bidsList = item.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).
         collect(Collectors.toList());
-
         return bidsList;
     }
 

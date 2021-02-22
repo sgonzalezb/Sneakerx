@@ -18,7 +18,7 @@ public class AskTest {
     @Test
     public void toStringTest(){
         Ask ask = new Ask("250", 600);
-        assertEquals("600", ask.toString());
+        assertEquals("600 250", ask.toString());
     }
 
 }
