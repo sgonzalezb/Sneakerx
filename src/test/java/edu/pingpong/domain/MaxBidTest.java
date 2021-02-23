@@ -22,6 +22,8 @@ import edu.pingpong.domain.offer.Sneaker;
 
 public class MaxBidTest {
 
+    List<Item> item;
+
 
     Criteria Bids;
 
@@ -37,6 +39,20 @@ public class MaxBidTest {
 
         Sale sale = new Sale("Cero", 50);
 
+        Bid itemuno = new Bid("2550", 505);
+        Bid itemdos = new Bid("2550", 450);
+        Bid itemtres = new Bid("2550", 25);
+
+        List<Item> item = new ArrayList<Item>();
+
+
+
+        item.add((Item) itemuno);
+        item.add((Item) itemdos);
+        item.add((Item) itemtres);
+
+
+
         sneaker.add(sale);
         sneaker.add(new Ask("Uno", 100));
         sneaker.add(new Sale("Dos", 2));
@@ -50,21 +66,28 @@ public class MaxBidTest {
         sneaker.add(new Ask("Cuatro", 2));
         sneaker.add(new Bid("Tres", 56));
         sneaker.add(new Bid("Tres", 57));
-        sneaker.add(new Bid("Tres", 59));
+        //sneaker.add(new Bid("Tres", 59));
 
 
 
 
     }
 
-    @Test // TENGO QUE TESTEAR QUE NO ENTREN VALORES NULOS, LA VERDAD ES QUE AHORA MISMO NO SÉ CÓMO HACERLO
+    @Test 
     public void minTest() {
         for (Offer offer : maxBid.checkCriteria(this.sneaker)) {
             assertNotNull(offer);
             assertTrue(offer instanceof Bid);
-            assertEquals(59, offer.value());
+        }
+
+    
+    }
+    
+    @Test
+    public void MaxBidTest(){
+        for (Item bid : item){
+            bid.checkCriteria(sneaker);
 
         }
     }
-    
 }

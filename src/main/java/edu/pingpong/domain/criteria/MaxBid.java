@@ -12,6 +12,8 @@ import edu.pingpong.domain.offer.Sneaker;
 
 public class MaxBid implements Criteria {
 
+    public MaxBid(){}
+
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         List<Offer> bidsList = sneaker.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).

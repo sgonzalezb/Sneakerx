@@ -11,6 +11,10 @@ import edu.pingpong.domain.offer.Offer;
 
 public class MinAsk implements Criteria {
 
+
+
+    public MinAsk(){};
+
     @Override
     public List<Offer> checkCriteria(Item sneaker) {
         List<Offer> askList = sneaker.offers().stream().filter(o -> o instanceof Bid).filter(o -> o!=null).
